@@ -27,6 +27,8 @@ server {
 	include global/server/ssl.conf;
 
 	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to /index.php.
 		try_files $uri $uri/ /index.php?$args;
 	}
 
