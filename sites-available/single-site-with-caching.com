@@ -6,7 +6,7 @@ fastcgi_cache_path /var/www/single-site-with-caching.com/cache levels=1:2 keys_z
 server {
 	# Ports to listen on, uncomment one.
 	listen 443 ssl http2;
-	listen [::]:443 ssl http2 ipv6only=on;
+	listen [::]:443 ssl http2;
 
 	# Server name to listen for
 	server_name single-site-with-caching.com;
