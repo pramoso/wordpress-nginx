@@ -34,6 +34,9 @@ server {
 	# SSL rules
 	include global/server/ssl.conf;
 
+	# Rankmath rules
+	include global/server/rankmath.conf;
+
 	location / {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to /index.php.
