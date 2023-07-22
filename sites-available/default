@@ -1,9 +1,22 @@
 # Catch-all server block, resulting in a 444 response for unknown domains.
+# https://serverfault.com/a/1107775
+# https://trac.nginx.org/nginx/ticket/195#comment:11
 
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
+
 	server_name _;
 
-	return 444;
+	return 444; # to just drop such connections
+}
+
+server {
+	listen 443 ssl http2 default_server;
+	listen [::]:443 ssl http2 default_server;
+
+	server_name _;
+	
+	ssl_reject_handshake on;
+	# breaks https for non-SNI clients
 }
