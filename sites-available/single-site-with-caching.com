@@ -79,7 +79,7 @@ server {
 server {
 	# Ports to listen on
 	listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+	listen [::]:443 ssl http2;
 
 	# Server name to listen for
 	server_name www.single-site-with-caching.com;
